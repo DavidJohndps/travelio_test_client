@@ -77,14 +77,25 @@
                               <h3 class="uk-card-title uk-text-truncate">
                                 {{ wishlistedBook?.title }}
                               </h3>
-                              <p class="uk-text-break">
+                              <!-- <p class="uk-text-break">
                                 {{
                                   wishlistedBook?.description ||
                                   'No Description for this book'
                                 }}
                                 , Rating: {{ wishlistedBook?.ratings }}/5
+                              </p> -->
+                              <p>
+                                {{
+                                  wishlistedBook?.description?.length > 50
+                                    ? `${wishlistedBook?.description?.substring(
+                                        0,
+                                        50
+                                      )}...`
+                                    : wishlistedBook?.description ||
+                                      'No Description for this book'
+                                }}
+                                , Rating: {{ wishlistedBook?.ratings }}/5
                               </p>
-                              <!-- <p>{{ wishlistedBook?.description?.length > 50 ? `${wishlistedBook?.description?.substring(0, 50)}...` : wishlistedBook?.description || 'No Description for this book' }} , Rating: {{ wishlistedBook?.ratings }}/5 </p> -->
                             </div>
                           </div>
                         </div>

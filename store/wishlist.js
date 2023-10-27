@@ -45,6 +45,7 @@ export const actions = {
         { book, userId }
       )
       commit('setData', { data, status })
+      alert('Book added to Wishlists!')
     } catch (error) {
       console.log(error)
     }
