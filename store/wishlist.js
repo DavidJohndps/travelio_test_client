@@ -42,12 +42,7 @@ export const actions = {
       commit('setLoading', true)
       const { status, data } = await this.$axios.$post(
         'api/wishlists/addWishlist',
-        { book },
-        {
-          params: {
-            userId,
-          },
-        }
+        { book, userId }
       )
       commit('setData', { data, status })
     } catch (error) {
@@ -60,15 +55,15 @@ export const actions = {
 
 export const mutations = {
   setLoading(state, payload) {
-    state.books.isLoading = payload
+    state.wishlist.isLoading = payload
   },
   setData(state, payload) {
-    state.books.data = payload.data
+    state.wishlist.data = payload.data
   },
   unsetData(state) {
-    state.books.data = []
+    state.wishlist.data = []
   },
   setTotal(state, payload) {
-    state.books.total = payload
+    state.wishlist.total = payload
   },
 }
