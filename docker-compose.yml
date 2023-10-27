@@ -2,6 +2,10 @@ services:
   app:
     build: .
     container_name: books-client
+    environment:
+      -NUXT_HOST=0.0.0.0
+      -NUXT_PORT=3000
+      -API_URI=https://pink-scary-swallow.cyclic.app/
     restart: always
     ports:
       - '3000:3000'
