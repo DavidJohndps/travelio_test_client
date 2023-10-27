@@ -84,7 +84,7 @@
                                 }}
                                 , Rating: {{ wishlistedBook?.ratings }}/5
                               </p> -->
-                              <p>
+                              <p class="uk-text-truncate">
                                 {{
                                   wishlistedBook?.description?.length > 50
                                     ? `${wishlistedBook?.description?.substring(
@@ -93,9 +93,11 @@
                                       )}...`
                                     : wishlistedBook?.description ||
                                       'No Description for this book'
-                                }}
-                                , Rating: {{ wishlistedBook?.ratings }}/5
+                                }}5
                               </p>
+                              <rating
+                                :initial-rating="wishlistedBook?.ratings"
+                              />
                             </div>
                           </div>
                         </div>
@@ -184,7 +186,8 @@
               </div>
               <h3 class="uk-card-title uk-text-truncate">{{ book?.title }}</h3>
               <p>{{ book?.author }}</p>
-              <p>{{ book?.ratings }}/5</p>
+              <rating :initial-rating="book?.ratings" />
+              <!-- <p>{{ book?.ratings }}/5</p> -->
             </div>
           </div>
         </div>
