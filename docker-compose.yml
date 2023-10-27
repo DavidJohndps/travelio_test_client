@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    container_name: books-client
+    restart: always
+    ports:
+      - '3030:3030'
+    command: 'npm run start'
