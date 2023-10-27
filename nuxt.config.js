@@ -49,6 +49,10 @@ export default {
     '@nuxtjs/eslint-module',
   ],
 
+  env: {
+    API_URL: process.env.API_URL,
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
